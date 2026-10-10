@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-labelledby="t">
+  <title id="t">Student Guide</title>
+  <defs>
+    <linearGradient id="lgl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3479CE"/>
+      <stop offset="1" stop-color="#155F9C"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="4" width="48" height="48" rx="14" fill="url(#lgl)"/>
+  <path d="M12 22 26 15l14 7-14 7z" fill="#D9F279"/>
+  <path d="M17 25v7c0 2.6 4 4.6 9 4.6s9-2 9-4.6v-7l-9 4.5z" fill="#fff"/>
+  <path d="M38 23v8" stroke="#D9F279" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="38" cy="32.5" r="2" fill="#D9F279"/>
+  <path d="M13 41.5c4.3-2 8.7-2 13 0 4.3-2 8.7-2 13 0" fill="none" stroke="#8BC2F1" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="60" y="27" font-family="Fraunces, Georgia, serif" font-size="21" font-weight="700" fill="#FFFFFF">Student</text>
+  <text x="60" y="48" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.2" fill="#D9F279">GUIDE</text>
+</svg>
