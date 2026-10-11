@@ -26,7 +26,7 @@
   --shadow-lg: 0 32px 64px -24px rgba(21, 95, 156, .38);
 
   --ease: cubic-bezier(.22, .61, .36, 1);
-  --header-h: 72px;
+  --header-h: 84px;
   --container: 1180px;
   --gutter: clamp(16px, 4vw, 32px);
 }
@@ -129,10 +129,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .site-header.is-scrolled { background: rgba(255, 255, 255, .9); border-color: rgba(21, 95, 156, .1); box-shadow: 0 8px 24px -16px rgba(18, 52, 74, .25); }
 .header-inner { display: flex; align-items: center; gap: 24px; height: var(--header-h); }
 .brand { display: inline-flex; align-items: center; gap: 12px; flex: none; border-radius: 12px; text-decoration: none; }
-.brand-logo { width: 52px; height: 52px; border-radius: 50%; background: var(--white); box-shadow: 0 4px 12px -4px rgba(21, 95, 156, .35); }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-text strong { font-family: var(--font-display); font-weight: 700; font-size: 1.1875rem; color: var(--deep); letter-spacing: -.01em; }
-.brand-text span { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--royal); }
+.brand-logo { width: 64px; height: 64px; border-radius: 50%; background: var(--white); image-rendering: -webkit-optimize-contrast; }
+.brand-text { font-family: var(--font-display); font-weight: 700; font-size: 1.3125rem; color: var(--deep); letter-spacing: -.01em; line-height: 1; }
 .primary-nav { margin-left: auto; }
 .nav-list { display: flex; gap: 4px; list-style: none; }
 .nav-link {
@@ -512,7 +510,7 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 }
 
 @media (max-width: 960px) {
-  :root { --header-h: 66px; }
+  :root { --header-h: 72px; }
   .primary-nav, .header-cta { display: none; }
   .nav-toggle { display: flex; }
 
@@ -541,9 +539,8 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 
 @media (max-width: 640px) {
   body { font-size: 1rem; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
-  .brand-logo { width: 44px; height: 44px; }
-  .brand-text strong { font-size: 1.0625rem; }
-  .brand-text span { font-size: .6875rem; }
+  .brand-logo { width: 54px; height: 54px; }
+  .brand-text { font-size: 1.125rem; }
   .hero { padding-bottom: 72px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
