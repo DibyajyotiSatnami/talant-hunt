@@ -10,9 +10,12 @@ assets/images/      Logo, icons and hero artwork
 ```
 
 ## Logo and images
-- `assets/images/student-guide-logo-{128,256}.{webp,png}`: the official Student Guide badge, used in the header (52px) and footer (88px) at 1x and 2x, always square so its proportions are preserved.
+- `assets/images/student-guide-mark-{60,120,180}.{webp,png}`: the cap-and-SG mark cut from the official badge, used in the header next to a "STUDENT / Guide" wordmark set in Montserrat to match the logo lettering.
+- `assets/images/student-guide-logo-{128,256,512}.{webp,png}`: the full round badge, used in the footer.
 - `favicon-48.png`, `apple-touch-icon.png`: browser and home-screen icons made from the same badge.
-- `hero-students-{800,1300}.{webp,jpg}`: the students artwork cropped from the SGTH 2026 poster.
+- `hero-students-{800,1300}.{webp,jpg}`: the students artwork cropped from the SGTH 2026 poster, with the poster's white swoosh removed.
+
+The stylesheet and script are linked with a `?v=` query. Bump it whenever CSS or JS changes so visitors don't keep a stale cached copy.
 
 ## Enquiry form
 The form validates the required fields and the 10-digit Indian mobile number, then opens

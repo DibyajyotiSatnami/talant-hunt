@@ -128,9 +128,15 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .site-header.is-scrolled { background: rgba(255, 255, 255, .9); border-color: rgba(21, 95, 156, .1); box-shadow: 0 8px 24px -16px rgba(18, 52, 74, .25); }
 .header-inner { display: flex; align-items: center; gap: 24px; height: var(--header-h); }
-.brand { display: inline-flex; align-items: center; gap: 12px; flex: none; border-radius: 12px; text-decoration: none; }
-.brand-logo { width: 64px; height: 64px; border-radius: 50%; background: var(--white); image-rendering: -webkit-optimize-contrast; }
-.brand-text { font-family: var(--font-display); font-weight: 700; font-size: 1.3125rem; color: var(--deep); letter-spacing: -.01em; line-height: 1; }
+.brand { display: inline-flex; align-items: center; gap: 10px; flex: none; border-radius: 12px; text-decoration: none; }
+.brand-mark { width: auto; height: 60px; aspect-ratio: 38 / 60; object-fit: contain; flex: none; }
+.brand-word { display: flex; flex-direction: column; font-family: "Montserrat", var(--font-body); line-height: 1; }
+.brand-word-top { font-size: .6875rem; font-weight: 500; letter-spacing: .42em; text-transform: uppercase; color: #1E78C8; margin-bottom: 3px; padding-left: 2px; }
+.brand-word-main {
+  font-size: 1.75rem; font-weight: 700; letter-spacing: -.02em;
+  background: linear-gradient(100deg, #1A6FC2 0%, #2E8FD6 55%, #3AA9DF 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 .primary-nav { margin-left: auto; }
 .nav-list { display: flex; gap: 4px; list-style: none; }
 .nav-link {
@@ -198,7 +204,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .hero-title { display: flex; flex-direction: column; gap: 10px; }
 .hero-title-main {
   font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(3.4rem, 9vw, 6.4rem); line-height: .95; letter-spacing: -.03em;
+  font-size: clamp(3rem, 6.4vw, 5.25rem); line-height: .95; letter-spacing: -.03em; white-space: nowrap;
   text-shadow: 0 12px 40px rgba(10, 40, 70, .25);
 }
 .hero-year {
@@ -230,7 +236,11 @@ button, input, textarea { font: inherit; color: inherit; }
   border: 6px solid rgba(255, 255, 255, .92);
   box-shadow: 0 40px 70px -30px rgba(8, 32, 60, .6), 0 10px 24px rgba(8, 32, 60, .18);
   background: var(--royal);
-  aspect-ratio: 1300 / 748;
+  aspect-ratio: 1300 / 703;
+}
+.hero-photo::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 22%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(21, 95, 156, 0), rgba(21, 95, 156, .28));
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -539,8 +549,9 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 
 @media (max-width: 640px) {
   body { font-size: 1rem; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
-  .brand-logo { width: 54px; height: 54px; }
-  .brand-text { font-size: 1.125rem; }
+  .brand-mark { height: 50px; }
+  .brand-word-top { font-size: .625rem; }
+  .brand-word-main { font-size: 1.5rem; }
   .hero { padding-bottom: 72px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
