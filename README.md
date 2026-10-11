@@ -6,12 +6,13 @@ A static, responsive website for the Student Guide Talent Hunt. No build step an
 index.html          Page markup (all sections and inline SVG illustrations)
 css/styles.css      Design tokens, layout, animation, responsive and reduced-motion rules
 js/main.js          Mobile menu, scroll reveals, light parallax, and the enquiry form → WhatsApp
-assets/images/      Logo (dark and light variants) and favicon
+assets/images/      Logo, icons and hero artwork
 ```
 
-## Replacing the logo
-`assets/images/student-guide-logo.svg` (header) and `student-guide-logo-light.svg` (footer) are stand-ins.
-To use the official Student Guide logo, replace those files, or point the two `<img>` tags in `index.html` at the new file and update their `width`/`height` attributes and the `aspect-ratio` in `.brand-logo` / `.footer-brand img` to match the real logo. This keeps its proportions and prevents layout shift.
+## Logo and images
+- `assets/images/student-guide-logo-{128,256}.{webp,png}`: the official Student Guide badge, used in the header (52px) and footer (88px) at 1x and 2x, always square so its proportions are preserved.
+- `favicon-48.png`, `apple-touch-icon.png`: browser and home-screen icons made from the same badge.
+- `hero-students-{800,1300}.{webp,jpg}`: the students artwork cropped from the SGTH 2026 poster.
 
 ## Enquiry form
 The form validates the required fields and the 10-digit Indian mobile number, then opens

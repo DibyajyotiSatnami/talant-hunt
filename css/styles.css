@@ -128,8 +128,11 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .site-header.is-scrolled { background: rgba(255, 255, 255, .9); border-color: rgba(21, 95, 156, .1); box-shadow: 0 8px 24px -16px rgba(18, 52, 74, .25); }
 .header-inner { display: flex; align-items: center; gap: 24px; height: var(--header-h); }
-.brand { display: inline-flex; flex: none; border-radius: 10px; }
-.brand-logo { width: 176px; height: auto; aspect-ratio: 220 / 56; }
+.brand { display: inline-flex; align-items: center; gap: 12px; flex: none; border-radius: 12px; text-decoration: none; }
+.brand-logo { width: 52px; height: 52px; border-radius: 50%; background: var(--white); box-shadow: 0 4px 12px -4px rgba(21, 95, 156, .35); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text strong { font-family: var(--font-display); font-weight: 700; font-size: 1.1875rem; color: var(--deep); letter-spacing: -.01em; }
+.brand-text span { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--royal); }
 .primary-nav { margin-left: auto; }
 .nav-list { display: flex; gap: 4px; list-style: none; }
 .nav-link {
@@ -477,7 +480,7 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy); color: rgba(234, 243, 255, .82); padding: 64px 0 28px; }
 .footer-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(139, 194, 241, .18); }
-.footer-brand img { width: 176px; height: auto; aspect-ratio: 220 / 56; }
+.footer-logo { width: 88px; height: 88px; border-radius: 50%; background: var(--white); box-shadow: 0 0 0 4px rgba(139, 194, 241, .18); }
 .footer-brand p { margin-top: 14px; font-family: var(--font-display); font-style: italic; color: var(--lime); }
 .footer-nav ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
 .footer-nav a, .footer-contact a { color: var(--white); text-decoration: none; font-weight: 600; }
@@ -538,7 +541,9 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 
 @media (max-width: 640px) {
   body { font-size: 1rem; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
-  .brand-logo { width: 150px; }
+  .brand-logo { width: 44px; height: 44px; }
+  .brand-text strong { font-size: 1.0625rem; }
+  .brand-text span { font-size: .6875rem; }
   .hero { padding-bottom: 72px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
