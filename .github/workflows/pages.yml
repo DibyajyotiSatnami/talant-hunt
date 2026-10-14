@@ -25,7 +25,8 @@ jobs:
       - name: Collect site files
         run: |
           mkdir _site
-          cp -r index.html css js assets _site/
+          cp -r index.html sitemap.xml css js assets _site/
+          cp google*.html _site/ 2>/dev/null || true
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
