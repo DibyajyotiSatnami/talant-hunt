@@ -203,9 +203,9 @@ button, input, textarea { font: inherit; color: inherit; }
 .hero-copy .eyebrow { margin-bottom: 22px; }
 .hero-title { display: flex; flex-direction: column; gap: 10px; }
 .hero-title-main {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(3rem, 6.4vw, 5.25rem); line-height: .95; letter-spacing: -.03em; white-space: nowrap;
-  text-shadow: 0 12px 40px rgba(10, 40, 70, .25);
+  font-family: "Montserrat", var(--font-body); font-weight: 800;
+  font-size: clamp(2.75rem, 5.9vw, 4.9rem); line-height: 1; letter-spacing: -.035em; white-space: nowrap;
+  text-shadow: 0 14px 40px rgba(10, 40, 70, .28);
 }
 .hero-year {
   background: linear-gradient(100deg, var(--white) 0%, var(--lime) 60%, #F2E28B 100%);
@@ -214,6 +214,18 @@ button, input, textarea { font: inherit; color: inherit; }
 .hero-title-sub {
   font-family: var(--font-body); font-weight: 700;
   font-size: clamp(1.25rem, 2.6vw, 1.75rem); letter-spacing: .01em; color: var(--pale);
+}
+.hero-highlight {
+  position: relative; display: inline-block; margin-left: .15em; padding: .08em .45em .12em;
+  border-radius: 10px; color: var(--navy);
+  background: linear-gradient(100deg, var(--lime) 0%, #E9F7A6 100%);
+  box-shadow: 0 10px 24px -10px rgba(160, 190, 40, .8), inset 0 -2px 0 rgba(18, 52, 74, .1);
+  transform: rotate(-1.5deg);
+}
+.hero-highlight::after {
+  content: ""; position: absolute; top: -7px; right: -7px; width: 14px; height: 14px;
+  background: var(--gold);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
 }
 .hero-tagline {
   display: inline-block; margin-top: 22px;
