@@ -223,6 +223,36 @@
     }
   }
 
+  /* ---------- Important dates: mark past / next ---------- */
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.date-item[data-date]'));
+    if (!items.length) return;
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    function parse(iso) { var p = iso.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+    var nextFound = false;
+    items.forEach(function (item) {
+      var date = parse(item.getAttribute('data-date'));
+      var status = item.querySelector('.date-status');
+      var until = item.getAttribute('data-open-until');
+      var days = Math.round((date - today) / 86400000);
+      if (days < 0) {
+        if (until && parse(until) >= today) {
+          status.textContent = 'Registration open';
+          item.classList.add('is-next');
+          nextFound = true;
+        } else {
+          item.classList.add('is-past');
+          status.textContent = 'Done';
+        }
+      } else if (!nextFound) {
+        nextFound = true;
+        item.classList.add('is-next');
+        status.textContent = days === 0 ? 'Today' : days === 1 ? 'Tomorrow' : 'In ' + days + ' days';
+      }
+    });
+  })();
+
   /* ---------- Year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(Math.max(2026, new Date().getFullYear()));
