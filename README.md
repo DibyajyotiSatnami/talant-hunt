@@ -23,3 +23,8 @@ The form validates the required fields and the 10-digit Indian mobile number, th
 
 ## Content guardrails
 The site deliberately leaves out exam dates, fees, venues, eligible classes, prize amounts and deadlines, because the source posters do not provide them. Visitors are invited to enquire on WhatsApp instead.
+
+## Search Console and security
+- `google6791b66ee6c728be.html` verifies the site in Google Search Console (URL-prefix property `https://dibyajyotisatnami.github.io/talant-hunt/`). Keep it in the site root; the deploy workflow copies `google*.html` automatically.
+- `index.html` carries a Content-Security-Policy meta tag: only the site's own scripts (plus the one hashed inline script), Google Fonts, and local or `data:` images may load. If you change the inline `<script>` in the `<head>`, update its `sha256-` hash in the policy, or the script will be blocked.
+- No secrets, API keys or form data are stored anywhere; the enquiry form only builds a WhatsApp link.
