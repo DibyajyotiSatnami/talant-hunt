@@ -735,6 +735,40 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); b
 .contact-value-sm { font-size: 1.1875rem; }
 .contact-action { margin-top: 8px; font-weight: 700; font-size: .9375rem; color: var(--royal); }
 
+/* ---------- Social ---------- */
+.social-connect { margin-top: clamp(48px, 7vw, 72px); text-align: center; }
+.social-title {
+  display: inline-block; margin-bottom: 28px; padding: 10px 34px; border-radius: 12px;
+  background: linear-gradient(100deg, #F7FCE0 0%, var(--lime) 100%);
+  font-family: "Montserrat", var(--font-body); font-weight: 700; font-size: clamp(1.25rem, 2.4vw, 1.625rem); color: var(--navy);
+}
+.social-grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 3vw, 40px); max-width: 860px; margin: 0 auto; }
+.social-card {
+  display: flex; flex-direction: column; align-items: center; gap: 14px; height: 100%;
+  padding: 22px 14px; border-radius: var(--radius); text-decoration: none; color: var(--navy);
+  background: linear-gradient(180deg, var(--pale), #F6FAFF); border: 1px solid rgba(139, 194, 241, .5);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.social-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--sky); color: var(--deep); }
+.social-icon { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 20px; background: var(--white); box-shadow: var(--shadow-sm); }
+.social-icon svg { width: 52px; height: 52px; }
+.social-handle { padding: 8px 16px; border-radius: 10px; background: var(--white); font-weight: 600; font-size: .9688rem; word-break: break-word; box-shadow: var(--shadow-sm); }
+.footer-social { display: flex; gap: 10px; margin-top: 8px; }
+.footer-social a {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
+  background: rgba(255, 255, 255, .08); border: 1px solid rgba(139, 194, 241, .25); color: var(--white);
+  transition: background-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+.footer-social a:hover { background: var(--lime); color: var(--navy); transform: translateY(-2px); text-decoration: none; }
+.footer-social svg { width: 20px; height: 20px; }
+@media (max-width: 640px) {
+  .social-grid { grid-template-columns: 1fr; gap: 12px; max-width: 420px; }
+  .social-card { flex-direction: row; justify-content: flex-start; gap: 16px; padding: 12px 16px; text-align: left; }
+  .social-icon { width: 56px; height: 56px; border-radius: 16px; flex: none; }
+  .social-icon svg { width: 36px; height: 36px; }
+  .social-handle { padding: 0; background: none; box-shadow: none; font-size: 1rem; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy); color: rgba(234, 243, 255, .82); padding: 64px 0 28px; }
 .footer-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(139, 194, 241, .18); }
