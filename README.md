@@ -19,7 +19,7 @@ The stylesheet and script are linked with a `?v=` query. Bump it whenever CSS or
 
 ## Enquiry form
 The form validates the required fields and the 10-digit Indian mobile number, then opens
-`https://wa.me/919101447800?text=…` with the composed enquiry. Nothing is stored, and the visitor sends the message from WhatsApp themselves.
+`https://wa.me/919954562820?text=…` with the composed enquiry. Nothing is stored, and the visitor sends the message from WhatsApp themselves.
 
 ## Content guardrails
 The site deliberately leaves out exam dates, fees, venues, eligible classes, prize amounts and deadlines, because the source posters do not provide them. Visitors are invited to enquire on WhatsApp instead.

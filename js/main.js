@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = '919101447800';
+  var WHATSAPP_NUMBER = '919954562820';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   /* ---------- Header: scrolled state ---------- */
@@ -175,9 +175,19 @@
     studentClass: function (v) {
       return v ? '' : 'Please enter the student’s class or grade.';
     },
+    schoolName: function (v) {
+      if (!v) return 'Please enter the school name.';
+      if (v.length < 2) return 'School name looks too short.';
+      return '';
+    },
     contactNumber: function (v) {
       if (!v) return 'Please enter a contact number.';
       return normalisePhone(v) ? '' : 'Please enter a valid 10-digit mobile number.';
+    },
+    city: function (v) {
+      if (!v) return 'Please enter your city or town.';
+      if (v.length < 2) return 'City/Town looks too short.';
+      return '';
     },
     consent: function (_, el) {
       return el.checked ? '' : 'Please agree to share these details through WhatsApp.';
@@ -229,15 +239,14 @@
 
   function buildMessage() {
     var f = form.elements;
-    var orNA = function (v) { return clean(v) || 'Not provided'; };
     var lines = [
       'Hello Student Guide! I’m interested in SGTH 2026.',
       'Parent/Guardian Name: ' + clean(f.parentName.value),
       'Student Name: ' + clean(f.studentName.value),
       'Class/Grade: ' + clean(f.studentClass.value),
-      'School Name: ' + orNA(f.schoolName.value),
+      'School Name: ' + clean(f.schoolName.value),
       'Contact Number: +91 ' + normalisePhone(f.contactNumber.value),
-      'City/Town: ' + orNA(f.city.value),
+      'City/Town: ' + clean(f.city.value),
       'Message: ' + (f.message.value.trim() || 'Not provided'),
       'Please share the eligibility, event schedule, participation process, and other details.'
     ];

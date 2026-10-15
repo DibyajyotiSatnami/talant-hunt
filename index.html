@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Montserrat:wght@500;700;800&family=Noto+Sans+Bengali:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -92,7 +92,7 @@
           <p class="hero-tagline hero-anim" style="--d:270ms">Your Guide to Success Starts Here!</p>
           <p class="hero-desc hero-anim" style="--d:360ms">A celebration of young talent, creativity, and curiosity—helping junior school students discover their potential beyond the classroom.</p>
           <div class="hero-actions hero-anim" style="--d:450ms">
-            <a href="#enquire" class="btn btn-lime btn-lg">
+            <a href="https://wa.me/919954562820?text=Hello%20Student%20Guide%21%20I%E2%80%99m%20interested%20in%20SGTH%202026.%20Please%20share%20the%20eligibility%2C%20event%20schedule%2C%20participation%20process%2C%20and%20other%20details." class="btn btn-lime btn-lg" target="_blank" rel="noopener">
               <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
               Enquire on WhatsApp
             </a>
@@ -622,8 +622,9 @@
             </div>
 
             <div class="field">
-              <label for="schoolName">School Name <span class="optional">(optional)</span></label>
-              <input id="schoolName" name="schoolName" type="text" autocomplete="organization" maxlength="120">
+              <label for="schoolName">School Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="schoolName" name="schoolName" type="text" autocomplete="organization" required maxlength="120" aria-describedby="schoolName-error">
+              <p class="field-error" id="schoolName-error" aria-live="polite"></p>
             </div>
 
             <div class="field">
@@ -637,8 +638,9 @@
             </div>
 
             <div class="field">
-              <label for="city">City/Town <span class="optional">(optional)</span></label>
-              <input id="city" name="city" type="text" autocomplete="address-level2" maxlength="80">
+              <label for="city">City/Town <span class="req" aria-hidden="true">*</span></label>
+              <input id="city" name="city" type="text" autocomplete="address-level2" required maxlength="80" aria-describedby="city-error">
+              <p class="field-error" id="city-error" aria-live="polite"></p>
             </div>
 
             <div class="field field-full">
@@ -661,7 +663,7 @@
           </button>
           <p class="form-note">WhatsApp will open with your enquiry. Please tap Send to share it with us.</p>
           <p class="form-fallback" id="form-fallback" hidden>
-            Didn’t see WhatsApp open? <a id="form-fallback-link" href="https://wa.me/919101447800" target="_blank" rel="noopener">Open WhatsApp with your enquiry</a>.
+            Didn’t see WhatsApp open? <a id="form-fallback-link" href="https://wa.me/919954562820" target="_blank" rel="noopener">Open WhatsApp with your enquiry</a>.
           </p>
         </form>
       </div>
@@ -686,12 +688,12 @@
             <span class="contact-action">Tap to call →</span>
           </a>
 
-          <a class="contact-card reveal" style="--i:1" href="https://wa.me/919101447800" target="_blank" rel="noopener">
+          <a class="contact-card reveal" style="--i:1" href="https://wa.me/919954562820" target="_blank" rel="noopener">
             <span class="contact-icon contact-icon-wa" aria-hidden="true">
               <svg viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
             </span>
             <span class="contact-label">WhatsApp</span>
-            <span class="contact-value">+91 91014 47800</span>
+            <span class="contact-value">+91 99545 62820</span>
             <span class="contact-action">Chat on WhatsApp →</span>
           </a>
 
@@ -730,7 +732,7 @@
       </nav>
       <div class="footer-contact">
         <a href="tel:+919101447800">Call 9101447800</a>
-        <a href="https://wa.me/919101447800" target="_blank" rel="noopener">WhatsApp us</a>
+        <a href="https://wa.me/919954562820" target="_blank" rel="noopener">WhatsApp 9954562820</a>
         <p>Student Guide HQ, Near Nagameez Jalukbari Unit</p>
       </div>
     </div>
@@ -741,7 +743,7 @@
   </footer>
 
   <!-- Floating WhatsApp (tablet/desktop) -->
-  <a class="wa-float" href="https://wa.me/919101447800" target="_blank" rel="noopener" aria-label="Chat with Student Guide on WhatsApp">
+  <a class="wa-float" href="https://wa.me/919954562820" target="_blank" rel="noopener" aria-label="Chat with Student Guide on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   </a>
 
@@ -763,6 +765,6 @@
     </symbol>
   </svg>
 
-  <script src="js/main.js?v=8" defer></script>
+  <script src="js/main.js?v=9" defer></script>
 </body>
 </html>
