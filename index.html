@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Montserrat:wght@500;700;800&family=Noto+Sans+Bengali:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/styles.css?v=15">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -762,20 +762,28 @@
     <section class="section director" aria-labelledby="director-title">
       <div class="container">
         <figure class="director-card reveal">
-          <h2 id="director-title" class="sr-only">Director’s message</h2>
-          <p class="eyebrow eyebrow-dark"><span class="eyebrow-dot" aria-hidden="true"></span>Director’s Message</p>
-          <svg class="quote-mark" viewBox="0 0 64 48" aria-hidden="true" width="64" height="48"><path d="M0 48V28C0 12 8 2 24 0v9c-8 2-12 8-12 16h12v23zm36 0V28c0-16 8-26 24-28v9c-8 2-12 8-12 16h12v23z" fill="currentColor"/></svg>
-          <blockquote class="director-quote">
-            <p>We measure success not by the dreams we achieve, but by the heights we dare to imagine.</p>
-          </blockquote>
-          <p class="director-note">SGTH 2026 is more than a competition. It is a celebration of young talent, creativity, and the limitless potential of our future leaders.</p>
-          <figcaption class="director-sign">
-            <span class="director-initials" aria-hidden="true">PPB</span>
-            <span>
-              <strong>Prachyrjya Pratim Borah</strong>
-              <span>Director, Student Guide</span>
-            </span>
-          </figcaption>
+          <div class="director-photo">
+            <picture>
+              <source type="image/webp" srcset="assets/images/team-prachyrjya-pratim-borah.webp">
+              <img src="assets/images/team-prachyrjya-pratim-borah.png" alt="Portrait of Prachyrjya Pratim Borah, Director, Student Guide" width="270" height="349" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="director-body">
+            <h2 id="director-title" class="sr-only">Director’s message</h2>
+            <p class="eyebrow eyebrow-dark"><span class="eyebrow-dot" aria-hidden="true"></span>Director’s Message</p>
+            <svg class="quote-mark" viewBox="0 0 64 48" aria-hidden="true" width="64" height="48"><path d="M0 48V28C0 12 8 2 24 0v9c-8 2-12 8-12 16h12v23zm36 0V28c0-16 8-26 24-28v9c-8 2-12 8-12 16h12v23z" fill="currentColor"/></svg>
+            <blockquote class="director-quote">
+              <p>We measure success not by the dreams we achieve, but by the heights we dare to imagine.</p>
+            </blockquote>
+            <p class="director-note">SGTH 2026 is more than a competition. It is a celebration of young talent, creativity, and the limitless potential of our future leaders.</p>
+            <figcaption class="director-sign">
+              <span class="director-sign-line" aria-hidden="true"></span>
+              <span>
+                <strong>Prachyrjya Pratim Borah</strong>
+                <span>Director, Student Guide</span>
+              </span>
+            </figcaption>
+          </div>
         </figure>
       </div>
     </section>
@@ -1022,6 +1030,6 @@
     </symbol>
   </svg>
 
-  <script src="js/main.js?v=14" defer></script>
+  <script src="js/main.js?v=15" defer></script>
 </body>
 </html>
