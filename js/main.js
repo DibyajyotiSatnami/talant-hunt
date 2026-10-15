@@ -151,6 +151,78 @@
     });
   }
 
+  /* ---------- Team carousel (phones only) ---------- */
+  var teamTrack = document.querySelector('.team-track');
+  if (teamTrack) {
+    var teamCards = Array.prototype.slice.call(teamTrack.children);
+    var teamDots = Array.prototype.slice.call(document.querySelectorAll('.team-dot'));
+    var phone = window.matchMedia('(max-width: 720px)');
+    var teamTimer = null;
+    var teamResume = null;
+    var teamInView = false;
+    var teamIndex = 0;
+
+    function cardOffset(i) {
+      var card = teamCards[i];
+      return card.offsetLeft - (teamTrack.clientWidth - card.offsetWidth) / 2;
+    }
+    function goTo(i) {
+      teamIndex = (i + teamCards.length) % teamCards.length;
+      teamTrack.scrollTo({ left: cardOffset(teamIndex), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    }
+    function syncDots() {
+      var center = teamTrack.scrollLeft + teamTrack.clientWidth / 2;
+      var best = 0, bestDist = Infinity;
+      teamCards.forEach(function (card, i) {
+        var d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - center);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      teamIndex = best;
+      teamDots.forEach(function (dot, i) {
+        if (i === best) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    }
+    function stopAuto() { clearInterval(teamTimer); teamTimer = null; }
+    function startAuto() {
+      stopAuto();
+      if (!phone.matches || reduceMotion.matches || !teamInView || document.hidden) return;
+      teamTimer = setInterval(function () { goTo(teamIndex + 1); }, 3500);
+    }
+    function pauseThenResume() {
+      stopAuto();
+      clearTimeout(teamResume);
+      teamResume = setTimeout(startAuto, 6000);
+    }
+
+    var syncTicking = false;
+    teamTrack.addEventListener('scroll', function () {
+      if (syncTicking) return;
+      syncTicking = true;
+      requestAnimationFrame(function () { syncTicking = false; syncDots(); });
+    }, { passive: true });
+    ['pointerdown', 'touchstart', 'wheel'].forEach(function (evt) {
+      teamTrack.addEventListener(evt, pauseThenResume, { passive: true });
+    });
+    teamTrack.addEventListener('focusin', stopAuto);
+    teamTrack.addEventListener('focusout', startAuto);
+    teamDots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); pauseThenResume(); });
+    });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stopAuto(); else startAuto(); });
+    phone.addEventListener('change', startAuto);
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        teamInView = entries[0].isIntersecting;
+        if (teamInView) startAuto(); else stopAuto();
+      }, { threshold: 0.4 }).observe(teamTrack);
+    } else {
+      teamInView = true;
+      startAuto();
+    }
+  }
+
   /* ---------- Year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(Math.max(2026, new Date().getFullYear()));
