@@ -116,6 +116,41 @@
     hideTargets.forEach(function (t) { if (t) barObserver.observe(t); });
   }
 
+  /* ---------- Syllabus level tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.level-tab'));
+  function selectTab(tab, focus, animate) {
+    tabs.forEach(function (t) {
+      var selected = t === tab;
+      t.setAttribute('aria-selected', String(selected));
+      t.tabIndex = selected ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      panel.hidden = !selected;
+      if (selected && animate) {
+        panel.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+        if (!reduceMotion.matches) {
+          panel.classList.remove('is-entering');
+          void panel.offsetWidth;
+          panel.classList.add('is-entering');
+        }
+      }
+    });
+    if (focus) tab.focus();
+  }
+  if (tabs.length) {
+    selectTab(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0], false, false);
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { selectTab(tab, false, true); });
+      tab.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); selectTab(next, true, true); }
+      });
+    });
+  }
+
   /* ---------- Year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(Math.max(2026, new Date().getFullYear()));
