@@ -96,6 +96,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .btn-icon { width: 1.25em; height: 1.25em; flex: none; }
 .btn-icon-end { transition: transform .25s var(--ease); }
 .btn:hover .btn-icon-end { transform: translateY(2px); }
+.btn:hover .btn-icon-out { transform: translate(2px, -2px); }
 
 /* ---------- Eyebrows & section heads ---------- */
 .eyebrow {
